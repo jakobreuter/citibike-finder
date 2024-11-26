@@ -150,6 +150,12 @@ function App() {
             <p>Last Updated: {new Date(stationStatus[nearestStation.station_id].last_reported * 1000).toLocaleTimeString()}</p>
           </div>
           <div className="station-actions">
+            <button 
+              onClick={handleNextStation}
+              className="next-station-button"
+            >
+              Show Next Closest Station
+            </button>
             <a 
               href={`https://www.google.com/maps/dir/?api=1&destination=${nearestStation.lat},${nearestStation.lon}`}
               target="_blank"
@@ -158,12 +164,6 @@ function App() {
             >
               Get Directions
             </a>
-            <button 
-              onClick={handleNextStation}
-              className="next-station-button"
-            >
-              Show Next Closest Station
-            </button>
           </div>
         </div>
       )}
